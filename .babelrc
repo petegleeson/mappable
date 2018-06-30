@@ -1,3 +1,7 @@
 {
-  "presets": ["env"]
+  "presets": [
+    "@babel/env",
+    ["@babel/preset-stage-1", { "decoratorsLegacy": true }]
+  ],
+  "plugins": [ "@babel/plugin-proposal-pipeline-operator" ]
 }

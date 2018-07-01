@@ -1,4 +1,4 @@
-import mappable, { map } from "../mappable";
+import map from "../mappable";
 
 const obj = {
   one: 1,
@@ -11,9 +11,7 @@ it("should map an object", () => {
 });
 
 it("should be able to map multiple times", () => {
-  const res = obj
-    |> map(i => i + 1)
-    |> map(i => i * 2);
+  const res = obj |> map(i => i + 1) |> map(i => i * 2);
   expect(res).toEqual({ one: 4, two: 6 });
 });
 
@@ -45,7 +43,7 @@ it("should map custom object", () => {
       children: children |> map(child => treeFunctor(fn, child))
     };
   };
-  const res = parent |> mappable(treeFunctor) |> map(i => i + 1);
+  const res = parent |> map(i => i + 1, treeFunctor);
   expect(res).toEqual({
     value: 2,
     children: [{ value: 3, children: [] }, { value: 4, children: [] }]

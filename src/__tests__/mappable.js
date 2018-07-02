@@ -36,11 +36,11 @@ const parent = {
 };
 
 it("should map custom object", () => {
-  const treeFunctor = (fn, tree) => {
+  const treeFunctor = fn => tree => {
     const { value, children } = tree;
     return {
       value: fn(value),
-      children: children |> map(child => treeFunctor(fn, child))
+      children: children |> map(treeFunctor(fn))
     };
   };
   const res = parent |> map(i => i + 1, treeFunctor);

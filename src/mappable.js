@@ -1,11 +1,11 @@
-const objectFunctor = (fn, obj) =>
+const objectFunctor = fn => obj =>
   Object.keys(obj).reduce((acc, key) => ({ ...acc, [key]: fn(obj[key]) }), {});
 
-const promiseFunctor = (fn, promise) => promise.then(fn);
+const promiseFunctor = fn => promise => promise.then(fn);
 
-const arrayFunctor = (fn, array) => array.map(fn);
+const arrayFunctor = fn => array => array.map(fn);
 
-const functionFunctor = (f, g) => x => f(g(x));
+const functionFunctor = f => g => x => f(g(x));
 
 const map = (fn, customFunctor) => subject => {
   const functor = (() => {
@@ -23,7 +23,7 @@ const map = (fn, customFunctor) => subject => {
       return objectFunctor;
     }
   })();
-  return functor(fn, subject);
+  return functor(fn)(subject);
 };
 
 export default map;

@@ -1,8 +1,8 @@
 # mappable
 
-**Experimental: use this at your own risk ☢️**
-
 Map anything and everything in the same way. A `map` function built for the [Pipeline Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Pipeline_operator).
+
+**Experimental: use this at your own risk ☢️**
 
 ## Installation
 

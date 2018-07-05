@@ -1,4 +1,4 @@
-import map from "../mappable";
+import map from "../map";
 
 const obj = {
   one: 1,

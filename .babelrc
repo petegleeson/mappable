@@ -1,7 +1,10 @@
 {
   "presets": [
-    "@babel/env",
+    ["@babel/env", { "modules": false }],
     ["@babel/preset-stage-1", { "decoratorsLegacy": true }]
   ],
-  "plugins": ["@babel/plugin-proposal-pipeline-operator", "@babel/plugin-proposal-async-generator-functions"]
+  "plugins": [
+    "@babel/plugin-proposal-pipeline-operator",
+    "@babel/plugin-proposal-async-generator-functions"
+  ]
 }

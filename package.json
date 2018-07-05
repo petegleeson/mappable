@@ -1,8 +1,8 @@
 {
-  "name": "mappable",
+  "name": "@mappable/map",
   "version": "0.0.1",
-  "main": "index.js",
-  "author": "petegleeson",
+  "main": "dist/index.js",
+  "author": "Pete Gleeson",
   "license": "MIT",
   "scripts": {
     "test": "jest"
